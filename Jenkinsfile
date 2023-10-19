@@ -16,8 +16,12 @@ pipeline {
 
    stage ('Build Docker Image')
    {
+     environment {
+      DOCKER_IMAGE = "omkarbolake94/MyApplication:$BUILD_NUMBER"
+     }
+    
     steps {
-     sh 'docker build -t myapp -f Dockerfile2 . '
+     sh 'docker build -t $DOCKER_IMAGE -f Dockerfile2 . '
        }
    }
    
