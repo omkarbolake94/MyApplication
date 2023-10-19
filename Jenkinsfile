@@ -13,6 +13,12 @@ pipeline {
         
       }
     }
+
+   stage ('Build Docker Image')
+   {
+      build -t myapp -f Dockerfile2 . 
+   }
+   
   }
 
 }
