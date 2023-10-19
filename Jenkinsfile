@@ -17,7 +17,7 @@ pipeline {
    stage ('Build Docker Image')
    {
      environment {
-      DOCKER_IMAGE = "omkarbolake94/MyApplication:$BUILD_NUMBER"
+      DOCKER_IMAGE = "omkarbolake94/myapplication:$BUILD_NUMBER"
      }
     
     steps {
