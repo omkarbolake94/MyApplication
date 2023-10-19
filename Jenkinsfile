@@ -27,12 +27,16 @@ pipeline {
        }
    }
 
-   stage('Print')
+   stage('Push Image')
    {
     steps{
 
+     withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
+    // some block
+      sh 'docker login -u omkarbolake94 -p ${dockerhub}'
+      sh 'docker push ${DOCKER_IMAGE}'
      sh 'echo $DOCKER_IMAGE'
-     
+     }
     }
    }
    
