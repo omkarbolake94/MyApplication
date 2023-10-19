@@ -1,3 +1,3 @@
 FROM redhat/ubi9:latest
-RUN yum install mvn -y
+RUN yum install maven -y
 
