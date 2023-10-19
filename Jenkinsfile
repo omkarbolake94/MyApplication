@@ -1,4 +1,4 @@
-pipelinem { 
+pipeline { 
 
  agent {
    dockerfile {args, '--user root -v /var/run/docker.sock:/var/run/docker.sock'}
